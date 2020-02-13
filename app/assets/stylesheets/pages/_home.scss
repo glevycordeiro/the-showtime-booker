@@ -5,3 +5,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.menu-button {
+  padding: 10px 25px;
+  border-radius: 10px;
+  background-color: rgb(165, 38, 38);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.menu-button:hover {
+  text-decoration: none;
+  color: white;
+}
