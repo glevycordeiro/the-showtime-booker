@@ -8,4 +8,16 @@ class MoviePolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def create?
+    record.cinema.user == user
+  end
+
+  def update
+    record.cinema.user == user
+  end
+
+  def destroy
+    record.cinema.user == user
+  end 
 end

@@ -10,4 +10,23 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     authorize @movie
   end
 
+  def new
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.new
+    @movie.cinema = @cinema
+    authorize @movie
+  end
+
+  def create
+    
+  end
+
+  def destroy
+    @cinema = Cinema.find(params[:cinema_id])
+    authorize @movie
+    @movie.delete
+  end
+  
+
+
 end
