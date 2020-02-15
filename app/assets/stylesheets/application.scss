@@ -9,8 +9,11 @@
 @import "font-awesome";
 
 // Your CSS partials
-@import "components/index";
 @import "pages/index";
-@import "components/banner";
 @import "pages/login";
-@import "pages/movie"
+@import "pages/movie";
+
+// Your Components
+@import "components/banner";
+@import "components/index";
+@import "components/datepicker";
