@@ -18,7 +18,15 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def create
-    
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.new(movie_params)
+    @movie.cinema = @cinema
+    authorize @movie
+    if  @movie.save
+      redirect_to "#"("#")
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -26,7 +34,4 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     authorize @movie
     @movie.delete
   end
-  
-
-
 end
