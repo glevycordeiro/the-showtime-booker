@@ -2,6 +2,10 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  height: 480px;
+  width: 280px;
+  margin: 20px;
 }
 
 .card-trip > img {
@@ -25,10 +29,10 @@
 
 .card-trip .card-trip-infos {
   padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  position: absolute;
+  bottom: 0px;
+  background: white;
+  width: 100%;
 }
 
 .card-trip-infos .card-trip-user {
