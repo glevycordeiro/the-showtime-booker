@@ -21,3 +21,27 @@
     margin-right: 20px;
   }
 }
+
+.schedule {
+  margin-top: 50px;
+  .simple_form {
+    display: flex;
+  }
+  .form-group {
+    margin: 0;
+  }
+  .form-group label {
+    display: none;
+  }
+  .form-button {
+    margin-left: 10px;
+    border-radius: 10%;
+    background-color: #a52727;
+    color: white;
+    border: none;
+  }
+}
+
+
+
+
