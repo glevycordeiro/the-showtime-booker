@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 gem 'devise'
+gem 'pundit'
 
 
 group :development do
