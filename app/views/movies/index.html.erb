@@ -1,10 +1,6 @@
-<div class="container">
-  <div class="row">
-      <% @movies.each do |movie| %>
-        <div class="col-12 col-sm-4">
-          <%= render "card_movie", movie: movie %>
-        </div>
-      <% end %>
-  </div>
+<div class="container movies-container">
+    <% @movies.each do |movie| %>
+      <%= render "card_movie", movie: movie %>
+    <% end %>
 </div>
 
