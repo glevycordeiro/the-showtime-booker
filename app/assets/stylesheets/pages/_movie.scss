@@ -4,5 +4,20 @@
 }
 
 .movie-info {
-  padding: 20px;
+  padding: 30px;
+  justify-content: space-evenly;
+  font-family: 'Roboto', sans-serif;
+}
+
+.movie-title {
+  color: #222222;
+  font-size: 56px;
+}
+
+.general-info {
+  display: flex;
+  font-size: 12px;
+  p {
+    margin-right: 20px;
+  }
 }
