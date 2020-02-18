@@ -4,6 +4,8 @@
   font: rgba(0,0,0,0);
   width: 20vh;
   height: 20vh;
+  border-radius: 50%;
+
 }
 
 .container_edit {
@@ -44,14 +46,33 @@ padding-bottom: 20px;
 }
 
 .right-content {
-  margin-top: 50px;
-  align-content: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 20%;
+
+}
+
+.image_wrapper {
+  position: relative;
+  text-align: center;
+
+
 }
 
 .lower-part {
   width: 100%;
+
 }
+
+#user_avatar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  opacity: 0;
+
+}
+
+
 
 
