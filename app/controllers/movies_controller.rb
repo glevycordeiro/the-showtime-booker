@@ -31,7 +31,27 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def destroy
     @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.find(params[:id])
     authorize @movie
     @movie.delete
   end
+
+  def edit
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.find(params[:id])
+    authorize @movie
+  end
+
+  def update
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.find(params[:id])
+    authorize @movie
+    if @movie.update
+      redirect_to @movie
+    else
+      render :edit
+    end
+  end
+
+
 end

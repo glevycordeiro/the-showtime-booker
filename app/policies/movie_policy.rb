@@ -13,7 +13,7 @@ class MoviePolicy < ApplicationPolicy
     record.cinema.user == user
   end
 
-  def new?
+  def update?
     record.cinema.user == user
   end
 
