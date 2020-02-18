@@ -1,0 +1,2 @@
+class MovieSessionsController < ApplicationController
+end
