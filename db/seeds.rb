@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 require 'faker'
 require 'open-uri'
 
@@ -17,6 +18,12 @@ file = open('https://res.cloudinary.com/woddi/image/upload/v1581782638/Showtime/
 
 # file = URI.open('https://res.cloudinary.com/woddi/image/upload/v1581782638/Showtime/woman-beard-transgender-lgbt-mtf-avatar-512_sdrnd1.png')
 # filename = File.basename(URI.parse(url).path)
+
+User.destroy_all
+Cinema.destroy_all
+Movie.destroy_all
+MovieSession.destroy_all
+Booking.destroy_all
 
 booking_status = ["active", "cancelled", "redeemed"]
 
@@ -52,12 +59,14 @@ puts 'Creating movie_sessions...'
 
 Movie.all.each do |movie|
   10.times do
-    start_time = Faker::Time.between(from: DateTime.now, to: DateTime.now + 7)
+    start_day_hour = Faker::Time.between(from: DateTime.now, to: DateTime.now + 7)
     movie_session = MovieSession.new(
-      start_date: start_time,
-      end_date: start_time + (movie.duration*60),
+      start_date: start_day_hour,
+      start_time: start_day_hour.strftime("%H:%M"),
+      end_date: start_day_hour + (movie.duration*60),
       movie_id: movie.id,
-      capacity: Faker::Number
+      capacity: Faker::Number,
+      status: true
     )
     movie_session.save!
   end
