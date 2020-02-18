@@ -17,6 +17,49 @@ class MoviesController < ApplicationController
     end
   end
 
+  def new
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.new
+    @movie.cinema = @cinema
+    authorize @movie
+  end
+
+  def create
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.new(movie_params)
+    @movie.cinema = @cinema
+    authorize @movie
+    if  @movie.save
+      redirect_to "#"("#")
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.find(params[:id])
+    authorize @movie
+    @movie.delete
+  end
+
+  def edit
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.find(params[:id])
+    authorize @movie
+  end
+
+  def update
+    @cinema = Cinema.find(params[:cinema_id])
+    @movie = Movie.find(params[:id])
+    authorize @movie
+    if @movie.update
+      redirect_to @movie
+    else
+      render :edit
+    end
+  end
+
   private
 
   def next_day
