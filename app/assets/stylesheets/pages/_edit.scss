@@ -1,0 +1,57 @@
+#photo {
+
+  background-position: cover;
+  font: rgba(0,0,0,0);
+  width: 20vh;
+  height: 20vh;
+}
+
+.container_edit {
+ background-color: light-grey;
+margin-top: 20px;
+margin-bottom: 20px;
+padding-bottom: 20px;
+ justify-content: center;
+ font-size: 14px;
+}
+
+.image_text {
+  font: red;
+
+
+}
+.user-edit-title {
+  text-align: center;
+  padding-top: 16px;
+
+}
+
+.upper-part {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-content {
+  width: 70%;
+  justify-content: center;
+
+}
+
+.form-actions {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.right-content {
+  margin-top: 50px;
+  align-content: center;
+  justify-content: center;
+  width: 20%;
+}
+
+.lower-part {
+  width: 100%;
+}
+
+
