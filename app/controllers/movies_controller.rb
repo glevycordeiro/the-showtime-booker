@@ -30,8 +30,7 @@ class MoviesController < ApplicationController
     @movie.cinema = @cinema
     authorize @movie
     if  @movie.save
-      redirect_to "#"("#")
-    else
+        else
       render :new
     end
   end
