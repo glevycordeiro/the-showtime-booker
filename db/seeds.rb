@@ -46,12 +46,14 @@ puts 'Creating movie_sessions...'
 
 Movie.all.each do |movie|
   10.times do
-    start_time = Faker::Time.between(from: DateTime.now, to: DateTime.now + 7)
+    start_day_hour = Faker::Time.between(from: DateTime.now, to: DateTime.now + 7)
     movie_session = MovieSession.new(
-      start_date: start_time,
-      end_date: start_time + (movie.duration*60),
+      start_date: start_day_hour,
+      start_time: start_day_hour.strftime("%H:%M"),
+      end_date: start_day_hour + (movie.duration*60),
       movie_id: movie.id,
-      capacity: Faker::Number
+      capacity: Faker::Number,
+      status: true
     )
     movie_session.save!
   end
