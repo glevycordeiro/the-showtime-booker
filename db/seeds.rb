@@ -8,6 +8,8 @@
 
 require 'faker'
 
+booking_status = ["active", "cancelled", "redeemed"]
+
 puts 'Creating 10 random users...'
 
 10.times do
@@ -47,6 +49,19 @@ Movie.all.each do |movie|
     movie_session.save!
   end
 end
+
+puts 'Creating bookings...'
+
+booking_one = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_two = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_three = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_four = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_five = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_six = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_seven = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_eight = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_nine = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_ten = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
 
 # puts 'Creating 10 random bookings...'
 

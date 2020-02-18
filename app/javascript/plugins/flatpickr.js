@@ -6,9 +6,6 @@ flatpickr(".datepicker", {
   inline: false,
   enableTime: false,
   minDate: "today",
+  defaultDate: new Date(),
 });
 
-flatpickr(".dobpicker", {
-  inline: false,
-  enableTime: false,
-});
