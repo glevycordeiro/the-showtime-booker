@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :movies, only: [:index, :show, :new, :create, :destroy]
-  resources :movie_sessions, only: [:new, :create, :edit, :update] do
-    resources :bookings, only: [:new,:create]
+  resources :movies, only: [:index, :show,:destroy]
+  resources :cinemas do
+    resources :movies, only: [:new, :create] do
+      resources :movie_sessions, only: [:new, :create, :edit, :update] do
+        resources :bookings, only: [:new,:create]
+      end
+    end
   end
-  # For details o the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "dashboard", to: 'pages#dashboard', as: 'dashboard'
 end

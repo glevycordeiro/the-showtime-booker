@@ -1,0 +1,78 @@
+#photo {
+
+  background-position: cover;
+  font: rgba(0,0,0,0);
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+
+}
+
+.container_edit {
+ background-color: light-grey;
+margin-top: 20px;
+margin-bottom: 20px;
+padding-bottom: 20px;
+ justify-content: center;
+ font-size: 14px;
+}
+
+.image_text {
+  font: red;
+
+
+}
+.user-edit-title {
+  text-align: center;
+  padding-top: 16px;
+
+}
+
+.upper-part {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-content {
+  width: 70%;
+  justify-content: center;
+
+}
+
+.form-actions {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+
+}
+
+.image_wrapper {
+  position: relative;
+  text-align: center;
+
+
+}
+
+.lower-part {
+  width: 100%;
+
+}
+
+#user_avatar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  opacity: 0;
+
+}
+
+
+
+
