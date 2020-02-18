@@ -6,7 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 require 'faker'
+
+User.destroy_all
+Cinema.destroy_all
+Movie.destroy_all
+MovieSession.destroy_all
+Booking.destroy_all
 
 booking_status = ["active", "cancelled", "redeemed"]
 
@@ -18,8 +25,8 @@ puts 'Creating 10 random users...'
     last_name: Faker::Name.last_name,
     dob: Date.today-25.years,
     email: Faker::Internet.email,
-    password: Faker::Internet.password,
-    # avatar: Faker::Avatar.image
+    password: "123456",
+    avatar: Faker::Avatar.image
   )
   user.save!
 end
