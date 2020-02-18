@@ -11,12 +11,19 @@
       <p><%= @movie.synopsis %></p>
 
       <div class="schedule">
-        <p><strong>Choose a Date</strong></p>
-        <%= render 'shared/schedule' %>
+
+        <div>
+          <p><strong>Choose a Date</strong></p>
+          <%= render 'shared/schedule' %>
+        </div>
+
+        <div class="schedule-buttons">
+          <% @sorted_sessions.each do |session| %>
+            <%= link_to session.start_date.strftime("%H:%M"), movies_path, class: "btn btn-primary sessions-button" %>
+          <% end %>
+        </div>
+
       </div>
-      <% @filtered_sessions.each do |session| %>
-        <%= link_to session.start_date.strftime("%H:%M"), movies_path, class: "btn btn-primary" %>
-      <% end %>
     </div>
 
 

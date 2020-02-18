@@ -26,11 +26,10 @@
       </div>
 
       <div class="right-content">
-
+        <div class="image_wrapper">
          <%= cl_image_tag current_user.avatar.key, id:"photo" %>
          <%= f.input :avatar, as: :file,  label: "Choose your picture" %>
-
-
+        </div>
       </div>
     </div>
     <div class="lower-part">

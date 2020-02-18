@@ -15,6 +15,9 @@ class MoviesController < ApplicationController
     else
       @filtered_sessions = []
     end
+    @sorted_sessions = @filtered_sessions.sort_by do |ev|
+        ev.start_date.strftime("%H:%M")
+      end
   end
 
   def new
@@ -30,8 +33,7 @@ class MoviesController < ApplicationController
     @movie.cinema = @cinema
     authorize @movie
     if  @movie.save
-      redirect_to "#"("#")
-    else
+        else
       render :new
     end
   end

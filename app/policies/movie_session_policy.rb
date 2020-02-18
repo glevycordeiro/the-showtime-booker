@@ -5,6 +5,7 @@ class MovieSessionPolicy < ApplicationPolicy
     end
   end
 
+
   def create?
     true
   end
