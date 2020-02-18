@@ -8,6 +8,16 @@
 
 
 require 'faker'
+require 'open-uri'
+
+file = open('https://res.cloudinary.com/woddi/image/upload/v1581782638/Showtime/woman-beard-transgender-lgbt-mtf-avatar-512_sdrnd1.png')
+
+# user.image.attach(io: file, filename: 'user-image.jpg')
+
+# url = 'https://res.cloudinary.com/woddi/image/upload/v1581782638/Showtime/woman-beard-transgender-lgbt-mtf-avatar-512_sdrnd1.png'
+
+# file = URI.open('https://res.cloudinary.com/woddi/image/upload/v1581782638/Showtime/woman-beard-transgender-lgbt-mtf-avatar-512_sdrnd1.png')
+# filename = File.basename(URI.parse(url).path)
 
 User.destroy_all
 Cinema.destroy_all
@@ -25,9 +35,12 @@ puts 'Creating 10 random users...'
     last_name: Faker::Name.last_name,
     dob: Date.today-25.years,
     email: Faker::Internet.email,
-    password: "123456",
-    avatar: Faker::Avatar.image
+    password: "123456"
   )
+  user.avatar.attach(io: file, filename: 'user-image.jpg')
+
+  # user.avatar.attach(io: file, filename: filename)
+
   user.save!
 end
 
