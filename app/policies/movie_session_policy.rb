@@ -5,11 +5,16 @@ class MovieSessionPolicy < ApplicationPolicy
     end
   end
 
-  def new?
+
+  def create?
     true
   end
 
-  def create?
+  def update?
+    true
+  end
+
+  def destroy?
     true
   end
 end
