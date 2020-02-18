@@ -7,3 +7,9 @@ flatpickr(".datepicker", {
   enableTime: false,
   minDate: "today",
 });
+
+flatpickr(".datehourpicker", {
+  inline: false,
+  enableTime: true,
+  minDate: "today",
+});
