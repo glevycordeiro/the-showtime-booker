@@ -18,7 +18,7 @@
         </div>
 
         <div class="schedule-buttons">
-          <% @filtered_sessions.each do |session| %>
+          <% @sorted_sessions.each do |session| %>
             <%= link_to session.start_date.strftime("%H:%M"), movies_path, class: "btn btn-primary sessions-button" %>
           <% end %>
         </div>
