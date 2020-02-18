@@ -1,5 +1,5 @@
 <div class="schedule-container">
-  <div class="form-wrapper" style="width: 200px">
+  <div class="form-wrapper">
     <%= simple_form_for :search, method: :get do |t| %>
       <%= t.input :date, as: :string, input_html: { class: "datepicker" } %>
       <%= button_tag type: 'submit', class: "button postfix form-button" do %>
