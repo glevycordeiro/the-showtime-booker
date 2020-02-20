@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :check_if_reedem
+  # before_action :check_if_reedem
   def new
     @booking = Booking.new
     @booking.status = "active"
