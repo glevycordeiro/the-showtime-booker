@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @movie = Movie.find(params[:id])
     authorize @movie
     if params[:search].present?
