@@ -20,18 +20,14 @@
         <div class="schedule-buttons">
           <div class="form-post">
             <%= simple_form_for @booking do |f| %>
-              <%= f.association :movie_session, collection: @sorted_sessions, as: :check_boxes %>
-
+              <%= f.association :movie_session, collection: @sorted_sessions,label_method: :start_time, as: :radio_buttons %>
             <% end %>
           </div>
         </div>
       </div>
     </div>
-
-
-
-
-
-
   </div>
 </div>
+
+
+
