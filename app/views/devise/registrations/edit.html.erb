@@ -27,8 +27,16 @@
 
       <div class="right-content">
         <div class="image_wrapper">
-         <%= cl_image_tag current_user.avatar.key, id:"photo" %>
-         <%= f.input :avatar, as: :file,  label: "Choose your picture" %>
+          <%#= raise %>
+         <% if current_user.avatar.attachment != nil %>
+            <%= cl_image_tag current_user.avatar.key, id:"photo" %>
+            <%= f.input :avatar, as: :file,  label: "Choose your picture" %>
+
+          <% else %>
+            <%= cl_image_tag ("https://res.cloudinary.com/woddi/image/upload/v1582062076/JR4pCEKhy9qib4KzzHxAWpvr.png"), id:"photo2" %>
+            <%= f.input :avatar, as: :file,  label: "Choose your picture" %>
+          <% end %>
+
         </div>
       </div>
     </div>

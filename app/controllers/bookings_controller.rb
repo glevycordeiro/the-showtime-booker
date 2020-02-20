@@ -1,13 +1,19 @@
 class BookingsController < ApplicationController
-  before_action :check_if_reedem
+  #before_action :check_if_redeem
   def new
+    @movie = Movie.find(params[:movie_id])
+    @movie_session = MovieSession.find(params[:movie_session_id])
     @booking = Booking.new
     @booking.status = "active"
+    authorize @booking
+    authorize @movie_session
+
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    authorize @booking
     @booking.save
     redirect_to bookings_path(@user)
   end
