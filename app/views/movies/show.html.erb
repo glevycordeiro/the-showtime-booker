@@ -20,13 +20,12 @@
         <div class="schedule-buttons">
           <div class="form-post">
             <%= simple_form_for @booking do |f| %>
-              <%= f.association @sorted_sessions, as: :check_boxes %>
+              <%= f.association :movie_session, collection: @sorted_sessions, as: :check_boxes %>
 
             <% end %>
           </div>
         </div>
       </div>
-      <%= render 'form' %>
     </div>
 
 
