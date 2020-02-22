@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     @booking.status = "active"
     authorize @booking
     authorize @movie_session
-
   end
 
   def create
