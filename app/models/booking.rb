@@ -9,7 +9,11 @@ class Booking < ApplicationRecord
   validates :status, inclusion: { in: STATUSES }
 
   def update_capacity
-    self.movie_session.capacity = self.movie_session.capacity - self.movie_session.bookings.last.seats
-    self.movie_session.save
+    if self.movie_session.capacity > 0
+      self.movie_session.capacity = self.movie_session.capacity - self.movie_session.bookings.last.seats
+      self.movie_session.save
+    else
+      return "Sold out!"
+    end
   end
 end
