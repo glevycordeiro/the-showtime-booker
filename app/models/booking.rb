@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :movie_session
   has_one :movie, through: :movie_session
   after_create :update_capacity
+  has_one :review
 
   STATUSES = ["active", "redeemed", "cancelled"]
   validates :status, inclusion: { in: STATUSES }
