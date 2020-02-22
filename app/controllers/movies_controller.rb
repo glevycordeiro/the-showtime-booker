@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
       @filtered_sessions = []
     end
     @sorted_sessions = @filtered_sessions.sort_by do |ev|
-        ev.start_date.strftime("%H:%M")
+      ev.start_date.strftime("%H:%M")
     end
   end
 
@@ -33,8 +33,8 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.cinema = @cinema
     authorize @movie
-    if  @movie.save
-        else
+    if @movie.save
+    else
       render :new
     end
   end

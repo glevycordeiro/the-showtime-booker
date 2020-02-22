@@ -8,9 +8,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.status = "active"
     authorize @booking
-    @booking.save
+    if @booking.save
     redirect_to @booking
+    else
+      render 'movies/show'
+    end
   end
 
   def edit
@@ -25,7 +29,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user, :status, :movie_session)
+    params.require(:booking).permit(:user, :status, :movie_session_id,:seats)
   end
 
   def check_if_redeem

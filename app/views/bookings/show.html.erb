@@ -1,5 +1,18 @@
-<h1>Your Booking Confirmation</h1>
-<p>email: <%= @booking.user.email %></p>
-<p>Booking status: <%= @booking.status %></p>
-<p>For the movie: <%= @booking.movie_session.movie.title %></p>
-<p>For the Session: <%= @booking.movie_session.start_time %></p>
+
+<div class="detail_pay-container d-flex cont">
+  <div class="payment-container">
+    <%= image_tag @booking.movie.poster, alt: "movie poster", width: 400 %>
+  </div>
+  <div>
+    <h3>Payment</h3>
+    <div class="movie-detail">
+      <div class="movie-session"><p style="font-weight: bold"><%= @booking.movie_session.start_date %>
+        <%= @booking.movie_session.start_date %>
+     </p></div>
+      <div class="number of seats"><p style="font-weight: bold"><%= @booking.seats%>seats * <%= @booking.movie_session.price %></p>
+      <p>Total price = 27,96€</p>
+      </p></div>
+
+
+  </div>
+</div>
