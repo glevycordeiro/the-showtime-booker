@@ -1,0 +1,7 @@
+<h1><%= @movie.title %></h1>
+
+<% @reviews.each do |review| %>
+  <p><%= review.user.first_name %> <%= review.user.last_name %></p>
+  <p><%= review.description %></p>
+  <p><%= review.rating %></p>
+<% end %>
