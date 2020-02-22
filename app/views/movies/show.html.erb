@@ -18,11 +18,13 @@
         </div>
 
         <div class="schedule-buttons">
-          <% @sorted_sessions.each do |session| %>
-            <%= link_to session.start_date.strftime("%H:%M"), movies_path, class: "btn btn-primary sessions-button" %>
-          <% end %>
-        </div>
+          <div class="form-post">
+            <%= simple_form_for @booking do |f| %>
+              <%= f.association :movie_session, collection: @sorted_sessions, as: :check_boxes %>
 
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -32,6 +34,4 @@
 
 
   </div>
-
-
 </div>
