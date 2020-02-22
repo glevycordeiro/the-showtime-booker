@@ -1,4 +1,19 @@
+<div class="container">
+
+<h1>My history</h1>
+
+<div class="container">
 <% @user.bookings.each do |booking| %>
-<%= booking.movie.title  %>
-<%= booking.movie_session.start_date  %>
+<ul>
+<%= image_tag booking.movie.poster, width: 150 %>
+<div>
+<ul><%= booking.movie.title  %></ul>
+<ul><%= booking.movie_session.start_date  %></ul>
+<ul><%= booking.price %></ul>
+<ul><%= booking.status %></ul>
+</div>
+</ul>
 <% end %>
+</div>
+
+</div>
