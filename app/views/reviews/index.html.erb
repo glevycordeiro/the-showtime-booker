@@ -1,7 +1,47 @@
-<h1><%= @movie.title %></h1>
+<div class="details-container">
+  <div class="review-container">
+    <div class="movie-poster">
+      <%= image_tag @movie.poster, alt: "movie poster", height: "100%" %>
+    </div>
+    <div class="movie-info">
+      <div class="movie-title"><p style="font-weight: bold"><%= @movie.title %></p></div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">User</th>
+          <th scope="col">Review</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
 
-<% @reviews.each do |review| %>
-  <p><%= review.user.first_name %> <%= review.user.last_name %></p>
-  <p><%= review.description %></p>
-  <p><%= review.rating %></p>
-<% end %>
+      <tbody>
+        <% @reviews.each do |review| %>
+          <tr>
+            <td class="user-info">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/nmtobias", class: "avatar dropdown-toggle" %>
+              <%= review.user.first_name %> <%= review.user.last_name %>
+            </td>
+            <td>
+              <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - review.rating).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+              <p><%= review.description %></p>
+            </td>
+            <td class="date-info">
+              <%= "#{review.created_at.strftime("Posted on %d/%m/%Y")}" %>
+              <!-- # <%= "#{review.created_at.strftime('%H:%M')}" %> -->
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+
+

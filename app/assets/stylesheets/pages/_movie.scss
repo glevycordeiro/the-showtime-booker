@@ -1,6 +1,10 @@
 .movie-container {
   display: flex;
   height: calc(100vh - 66px);
+  img {
+    padding-top: 60px;
+    height: 720px;
+  }
 }
 
 .movie-info {
@@ -12,6 +16,7 @@
 .movie-title {
   color: #222222;
   font-size: 56px;
+  padding-top: 55px;
 }
 
 .general-info {
@@ -23,42 +28,56 @@
 }
 
 .schedule {
-  margin-top: 30px;
+  margin-top: 20px;
    display: flex;
-  .simple_form {
-    display: flex;
-  }
-  .form-group {
-    margin: 0;
-  }
-  .form-group label {
-  }
-  .form-button {
-    margin-left: 10px;
-    border-radius: 10%;
-    background-color: #a52727;
-    color: white;
-    border: none;
-    height: 38px;
+  .date-picker {
+    .simple_form {
+      display: flex;
+      position: relative;
+    }
+    .form-group {
+      margin: 0;
+    }
+    .form-group label {
+    }
+    .form-button {
+      margin-left: 10px;
+      border-radius: 10%;
+      background-color: #a52727;
+      color: white;
+      border: none;
+      height: 38px;
+      position: absolute;
+      right: -40px;
+      top: 32px;
+    }
   }
 }
 
 .sessions-button {
   label {
-    background-color: #a52727;
+    background-color: white;
     border-color: #a52727;
     margin-right: 15px;
+    color: #a52727;
+    width: 80px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: #f6e1e1;
+      border-color: #f6e1e1;
+    }
   }
 }
 
-.sessions-button:hover {
-  background-color: #84142d;
-  border-color: #84142d;
-}
-
 .schedule-buttons {
-  margin-top: 40px;
   margin-left: 80px;
+  position: relative;
+  top: 72px;
+  border-color: #f6e1e1;
 }
 
 #number-tickets {
@@ -66,3 +85,31 @@
     display: none;
   }
 }
+
+.sessions-button-input {
+  opacity: 0;
+}
+
+#new_booking {
+  legend {
+  display: none;
+  }
+}
+
+.form-post {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-booking {
+  background-color: #a52727;
+  color: white;
+  border-color: #a52727;
+  border-radius: 5px;
+  &:hover {
+    background-color: #2d132c;
+    border-color: #2d132c;
+  }
+}
+
+
