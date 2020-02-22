@@ -17,6 +17,9 @@ class MovieSessionsController < ApplicationController
     else
       render :new
     end
+    @booking = Booking.new
+    raise
+    @available_seats = params[:capacity] - @movie_session.booking.length
   end
 
   def edit

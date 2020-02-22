@@ -1,0 +1,4 @@
+<% @user.bookings.each do |booking| %>
+<%= booking.movie.title  %>
+<%= booking.movie_session.start_date  %>
+<% end %>
