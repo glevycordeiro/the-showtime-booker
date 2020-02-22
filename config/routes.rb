@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :movies, only: [:index, :show,:destroy]
-  resources :bookings, only: [:new, :create, :edit, :update] do
+  resources :bookings, only: [:new, :create, :edit, :update,:show] do
     resources :reviews, only: [:new, :create]
   end
   resources :cinemas do
