@@ -1,21 +1,22 @@
 class BookingsController < ApplicationController
   #before_action :check_if_redeem
-  def new
-    @movie = Movie.find(params[:movie_id])
-    @movie_session = MovieSession.find(params[:movie_session_id])
-    @booking = Booking.new
-    @booking.status = "active"
-    authorize @booking
-    authorize @movie_session
 
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def create
+
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.status = "active"
     authorize @booking
-    @booking.save
-    redirect_to bookings_path(@user)
+    if @booking.save
+    redirect_to @booking
+    else
+      render 'movies/show'
+    end
   end
 
   def edit
@@ -30,7 +31,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user, :status, :movie_session)
+    params.require(:booking).permit(:user, :status, :movie_session_id,:seats)
   end
 
   def check_if_redeem
