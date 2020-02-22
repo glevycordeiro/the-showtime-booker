@@ -2,7 +2,11 @@ class MoviesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @movies = policy_scope(Movie).all
+    if params[:query].present?
+      @movies = policy_scope(Movie.where("title ILIKE ?", "%#{params[:query]}%"))
+    else
+      @movies = policy_scope(Movie).all
+    end
   end
 
   def show
