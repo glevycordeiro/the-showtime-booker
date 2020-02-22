@@ -1,6 +1,10 @@
 .movie-container {
   display: flex;
   height: calc(100vh - 66px);
+  img {
+    padding-top: 60px;
+    height: 720px;
+  }
 }
 
 .movie-info {
@@ -12,6 +16,7 @@
 .movie-title {
   color: #222222;
   font-size: 56px;
+  padding-top: 55px;
 }
 
 .general-info {
@@ -23,7 +28,7 @@
 }
 
 .schedule {
-  margin-top: 30px;
+  margin-top: 20px;
    display: flex;
   .date-picker {
     .simple_form {
