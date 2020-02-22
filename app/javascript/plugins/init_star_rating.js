@@ -1,1 +1,1 @@
-import "jquery-bar-rating"
+import "jquery-bar-rating";

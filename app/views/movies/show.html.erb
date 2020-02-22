@@ -22,7 +22,7 @@
             <%= simple_form_for @booking do |f| %>
               <%= f.association :movie_session, collection: @sorted_sessions, input_html: { class: 'sessions-button-input' }, label_method: lambda { |movie_session| "#{movie_session.start_date.strftime('%H:%M')}".html_safe }, as: :radio_buttons, item_wrapper_class: 'sessions-button'  %>
               <div id="number-tickets" class="hidden">
-              <%= f.input :movie_session, :value_method => @sorted_sessions, :label => "Your booking", :include_blank => false  %>
+              <%= f.input :seats %>
               </div>
             <% end %>
             </div>
