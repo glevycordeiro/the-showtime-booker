@@ -20,8 +20,13 @@
         <div class="schedule-buttons">
           <div class="form-post">
             <%= simple_form_for @booking do |f| %>
-              <%= f.association :movie_session, collection: @sorted_sessions,label_method: :start_time, as: :radio_buttons %>
+              <%= f.association :movie_session, collection: @sorted_sessions, input_html: { class: 'sessions-button-input' }, label: false, label_method: lambda { |movie_session| "#{movie_session.start_date.strftime('%H:%M')}".html_safe }, as: :radio_buttons, item_wrapper_class: 'sessions-button'  %>
+              <%= f.hidden_field :movie_session, value: @movie_sessions %>
             <% end %>
+          </div>
+          <div id="number-tickets" class="hidden">
+            <%=  @maximum_capacity = @movie.movie_sessions[0].capacity %>
+            <%= @available_seats = @maximum_capacity - @booking %>
           </div>
         </div>
       </div>
