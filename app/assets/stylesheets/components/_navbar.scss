@@ -1,16 +1,54 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: fixed;
+  width: 100vw;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  // display: flex;
+  // justify-content: space-around;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
 
+.user-avatar {
+  margin-left: 20px;
+}
+
 .nav-item.dropdown {
   cursor: pointer;
+}
+
+.search-input.hide-search-input {
+  display: none;
+}
+
+.search-element {
+  display: flex;
+  align-items: center;
+}
+
+.search-button {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+// @media only screen and (max-width: 600px) {
+//   .search-button2 {
+//     // border: none;
+//     outline: none;
+//     margin-left: 10px;
+//   }
+// }
+.search-button2 {
+  border: none;
+  margin-left: 10px;
+  &:focus {
+    outline: none;
+  }
 }

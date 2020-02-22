@@ -1,24 +1,26 @@
 import "bootstrap";
 import "plugins/flatpickr";
-import "plugins/init_star_rating"
-import { selectSession } from './../partials/movie_session';
+// import "plugins/init_star_rating";
+import { selectSession } from "./../partials/movie_session";
+import { openSearch } from "./../partials/search_bar";
+
 selectSession();
+openSearch();
 
 $(function() {
   function readURL(input) {
-
     if (input.files && input.files[0]) {
       var reader = new FileReader();
 
-      reader.onload = function (e) {
-        $('#img_prev').attr('src', e.target.result);
-      }
+      reader.onload = function(e) {
+        $("#img_prev").attr("src", e.target.result);
+      };
       reader.readAsDataURL(input.files[0]);
     }
   }
 
-  $("#user_avatar").change(function(){
-    $('#img_prev').removeClass('hidden');
+  $("#user_avatar").change(function() {
+    $("#img_prev").removeClass("hidden");
     readURL(this);
   });
 });
