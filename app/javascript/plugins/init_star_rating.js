@@ -9,3 +9,4 @@ const initStarRating = () => {
 };
 
 export { initStarRating };
+
