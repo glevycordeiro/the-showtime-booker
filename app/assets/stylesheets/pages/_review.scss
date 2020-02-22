@@ -1,0 +1,16 @@
+.review-container {
+  display: flex;
+  height: calc(100vh);
+  padding-top: 66px;
+  .movie-info {
+    flex: 1;
+    padding-left: 400px;
+  }
+  .movie-poster {
+    position: fixed;
+    top: 66px;
+    left: 0;
+    height: 100;
+    overflow: hidden;
+  }
+}

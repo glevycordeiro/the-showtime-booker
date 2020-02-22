@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :show,:destroy]
   resources :bookings, only: [:new, :create, :edit, :update] do
     resources :reviews, only: [:index, :new, :create]
+  end
   resources :bookings, only: [:new, :create, :edit, :update, :show] do
     resources :reviews, only: [:index, :new, :create]
   end
