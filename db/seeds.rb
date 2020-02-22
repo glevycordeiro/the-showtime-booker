@@ -66,7 +66,8 @@ Movie.all.each do |movie|
       end_date: start_day_hour + (movie.duration*60),
       movie_id: movie.id,
       capacity: Faker::Number,
-      status: true
+      status: true,
+      price: 7
     )
     movie_session.save!
   end
@@ -74,16 +75,16 @@ end
 
 puts 'Creating bookings...'
 
-booking_one = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_two = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_three = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_four = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_five = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_six = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_seven = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_eight = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_nine = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
-booking_ten = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample)
+booking_one = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_two = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_three = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_four = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_five = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_six = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_seven = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_eight = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_nine = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
+booking_ten = Booking.create(user: User.all.sample, status: booking_status.sample, movie_session: MovieSession.all.sample, price: 7, seats: 1)
 
 # puts 'Creating 10 random bookings...'
 
