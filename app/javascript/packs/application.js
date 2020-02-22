@@ -1,4 +1,5 @@
 import "bootstrap";
+import "jquery";
 import "plugins/flatpickr";
 import "plugins/init_star_rating"
 import { selectSession } from './../partials/movie_session';
@@ -22,3 +23,5 @@ $(function() {
     readURL(this);
   });
 });
+import { initStarRating } from '../plugins/init_star_rating';
+initStarRating();
