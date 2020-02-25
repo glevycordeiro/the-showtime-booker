@@ -15,21 +15,21 @@
       </thead>
 
       <tbody>
-        <% @reviews.each do |review| %>
+        <% @reviews.order(created_at: :desc).each do |review| %>
           <tr>
             <td class="user-info">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/nmtobias", class: "avatar dropdown-toggle" %>
               <%= review.user.first_name %> <%= review.user.last_name %>
             </td>
-            <td>
+            <td class="color-stars">
               <% review.rating.times do %>
                 <i class="fas fa-star"></i>
               <% end %>
               <% (5 - review.rating).times do %>
                 <i class="far fa-star"></i>
               <% end %>
-              <p><%= review.description %></p>
-            </td>
+              <p class="review-description"><%= review.description %></p>
+              </td>
             <td class="date-info">
               <%= "#{review.created_at.strftime("Posted on %d/%m/%Y")}" %>
               <!-- # <%= "#{review.created_at.strftime('%H:%M')}" %> -->

@@ -1,14 +1,14 @@
 .movie-container {
   display: flex;
-  height: calc(100vh - 66px);
+  // height: calc(100vh - 66px);
   img {
-    padding-top: 60px;
+    // padding-top: 60px;
     height: 720px;
   }
 }
 
 .movie-info {
-  padding: 10px 30px 10px 50px;
+  padding: 20px 30px 10px 50px;
   justify-content: space-evenly;
   font-family: 'Roboto', sans-serif;
 }
@@ -16,7 +16,8 @@
 .movie-title {
   color: #222222;
   font-size: 56px;
-  padding-top: 55px;
+  // padding-top: 55px;
+  font-weight: bold;
 }
 
 .general-info {
