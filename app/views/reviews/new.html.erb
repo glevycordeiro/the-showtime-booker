@@ -1,3 +1,28 @@
+<div class="details-container">
+  <div class="new-review-container">
+    <div class="movie-poster">
+      <%= image_tag @booking.movie.poster, alt: "movie poster", height: "100%" %>
+    </div>
+    <div class="review-info">
+      <h2>Your Review for <%= @booking.movie.title %></h2>
+      <div class="review-form">
+        <%= simple_form_for ([@booking, @review]) do |f| %>
+          <%= f.input :description, class: "review-write" %>
+          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: { class: 'review-rating' } %>
+          <%= f.submit :Submit, class: "btn btn-primary create-booking" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--
+
+
+
 <div class="container">
   <h2>Your Review for <%= @booking.movie.title %></h2>
     <div>
@@ -8,3 +33,4 @@
       <% end %>
     </div>
 </div>
+ -->
