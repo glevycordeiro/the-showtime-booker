@@ -26,6 +26,14 @@ class BookingsController < ApplicationController
     @booking.status = "cancelled"
   end
 
+  def cancelled
+    @booking = Booking.find(params[:booking])
+    authorize @booking
+    @booking.status = "cancelled"
+    @booking.save
+    redirect_to dashboard_path, notice: "movie session cancelled by your request"
+  end
+
   private
 
   def booking_params
