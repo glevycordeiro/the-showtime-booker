@@ -3,12 +3,14 @@
   height: calc(100vh - 66px);
   img {
     // padding-top: 60px;
-    height: 790px;
+    height: auto;
+    position: sticky;
+    top: 0;
   }
 }
 
 .review-info {
-  padding: 0px 30px 10px 50px;
+  padding: 10px 30px 10px 50px;
   justify-content: space-evenly;
   h2 {
     margin-bottom: 30px;
@@ -16,5 +18,5 @@
 }
 
 .review_description textarea {
-  width: 800px;
+  width: 850px;
 }
