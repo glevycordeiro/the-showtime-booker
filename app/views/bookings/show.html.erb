@@ -24,9 +24,9 @@
           <%#= link_to # do %>
           <p> <%= @booking.movie_session.movie.cinema.name %></p>
           <%# end %>
-          <p><span style=""><%= @booking.movie_session.start_time.strftime('%d %B') %>
+          <p><span style=""><%= @booking.movie_session.start_date.strftime('%d %B') %>
 
-          <%= @booking.movie_session.start_time.strftime('%H:%M') %></span></p>
+          <%= @booking.movie_session.start_date.strftime('%H:%M') %></span></p>
           <p><span><%= @booking.seats%>
             <%= "seats" if @booking.seats > 1 %>
             <%= "seat" if @booking.seats <= 1 %>
@@ -35,6 +35,7 @@
         </div>
       </div>
       <p id="title_line">Credit-Card Details</p>
+
 
       <div class="payment-data">
       <form>
