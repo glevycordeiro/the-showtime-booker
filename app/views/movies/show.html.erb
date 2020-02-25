@@ -2,7 +2,7 @@
   <div class="movie-container">
     <%= image_tag @movie.poster, alt: "movie poster", width: 400 %>
     <div class="movie-info">
-      <div class="movie-title"><p style="font-weight: bold"><%= @movie.title %></p></div>
+      <div class="movie-title"><%= @movie.title %></div>
       <div class="general-info">
         <p><strong> Age Limit: </strong> M/<%= @movie.age_limit %></p>
         <p><strong> Genre:</strong> <%= @movie.genre.capitalize %></p>
