@@ -15,7 +15,7 @@
       </thead>
 
       <tbody>
-        <% @reviews.each do |review| %>
+        <% @reviews.order(created_at: :desc).each do |review| %>
           <tr>
             <td class="user-info">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/nmtobias", class: "avatar dropdown-toggle" %>
