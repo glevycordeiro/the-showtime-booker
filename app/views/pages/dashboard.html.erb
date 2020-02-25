@@ -1,4 +1,10 @@
-<% @user.bookings.each do |booking| %>
-<%= booking.movie.title  %>
-<%= booking.movie_session.start_date  %>
-<% end %>
+<div class="container">
+
+  <h1>My history</h1>
+
+  <div class="bookings-container">
+      <% @user.bookings.each do |booking| %>
+         <%= render "dash_card", booking: booking%>
+      <% end %>
+
+</div>

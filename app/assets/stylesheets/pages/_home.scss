@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+.padded-container {
+  padding-top: 66px;
+}
+
 .center-container {
   display: flex;
   flex-direction: column;
@@ -7,14 +11,20 @@
 }
 
 .menu-button {
-  padding: 10px 25px;
+  padding: 15px 25px;
   border-radius: 10px;
-  background-color: rgb(165, 38, 38);
+  background-color: #a52626;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   color: white;
+  font-size: 18px;
+  border: 2px solid #a52626;
 }
 
 .menu-button:hover {
   text-decoration: none;
   color: white;
+  background-color: white;
+  color: #a52626;
+  transition-duration: 0.5s;
+  // border: 2px solid #a52626;
 }

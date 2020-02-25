@@ -1,7 +1,7 @@
 .review-container {
   display: flex;
   height: 100vh;
-  padding-top: 66px;
+  // padding-top: 20px;
   .movie-info {
     flex: 1;
     padding-left: 430px;
@@ -22,4 +22,12 @@
   .date-info {
     width: 100px;
   }
+  .color-stars {
+    color: #E4BB25;
+    .review-description {
+      color: black;
+    }
+  }
 }
+
+

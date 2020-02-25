@@ -1,0 +1,31 @@
+
+  <div class= "book-hist">
+    
+      <div class= "dash-img">
+        <%= image_tag  booking.movie.poster,height: 250 %>
+      </div>
+
+      <div class= "card-product">
+          <h2 class= "book-title"><%= booking.movie.title %></h2>
+          <div>
+            <p class= "book-text">Session: <%= booking.movie_session.start_date.strftime("%F %H:%M") %></p>
+            <p class= "book-text">Seats: <%= booking.seats %></p>
+            <p class= "book-text">Price: <%= booking.price %></p>
+            <p class= "book-text">Status: <%= booking.status.capitalize %></p>
+         </div>
+        <div class = "btn-box">
+
+          <%= link_to new_booking_review_path(booking), class: "far fa-edit book-btn book-btn-margin" do %>
+          <% end %>
+<% if booking.status == "active" %>
+    <%= link_to cancelled_path(booking: booking ), class: "far fa-window-close book-btn" do %>
+          <% end %>
+          <% else %>
+<% end %>
+        
+
+        </div>
+        
+      </div>
+    
+  </div>
