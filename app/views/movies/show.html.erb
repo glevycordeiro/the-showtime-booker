@@ -6,7 +6,9 @@
         <p><strong> Age Limit: </strong> M/<%= @movie.age_limit %></p>
         <p><strong> Genre:</strong> <%= @movie.genre.capitalize %></p>
         <p><strong> Duration (minutes): </strong><%= @movie.duration %></p>
-        <p><%= @average %></p>
+        <% @average.times do %>
+          <i class="fas fa-star color-stars"></i>
+        <% end %>
       </div>
       <p><%= @movie.synopsis %></p>
 
