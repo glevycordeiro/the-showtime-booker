@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   after_create :update_capacity
   has_one :review
 
-  STATUSES = ["active", "redeemed", "cancelled"]
+  STATUSES = ["active", "redeemed", "cancelled", "pending"]
   validates :status, inclusion: { in: STATUSES }
 
   def update_capacity
