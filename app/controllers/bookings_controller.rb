@@ -9,11 +9,15 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.status = "active"
+    @movie = @booking.movie_session.movie
     authorize @booking
     if @booking.save
     redirect_to @booking
+    flash[:alert] = "Booking sucessful"
     else
-      render 'movies/show'
+      flash[:notice] = "Session sold out, there are only #{@booking.movie_session.capacity-@booking.seats} seats available!"
+      redirect_to @movie
+      #render 'movies/show'
     end
   end
 
@@ -29,7 +33,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user, :status, :movie_session_id,:seats)
+    params.require(:booking).permit(:user, :status, :movie_session_id, :seats)
   end
 
   def check_if_redeem
@@ -39,4 +43,6 @@ class BookingsController < ApplicationController
       end
     end
   end
+
+
 end

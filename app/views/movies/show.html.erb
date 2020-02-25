@@ -24,7 +24,8 @@
             <%= simple_form_for @booking do |f| %>
               <%= f.association :movie_session, collection: @sorted_sessions, input_html: { class: 'sessions-button-input' }, label_method: lambda { |movie_session| "#{movie_session.start_date.strftime('%H:%M')}".html_safe }, as: :radio_buttons, item_wrapper_class: 'sessions-button'  %>
               <div id="number-tickets" class="hidden">
-                <%= f.input :seats, collection: [1, 2, 3], default: 1, label: 'Chose the number of tickets:' %>
+                <%= f.input :seats, collection: (1..200), default: 1, label: 'Chose the number of tickets:' %>
+                <%#= flash.alert "Already fully booked" if @booking.seats > @movie.movie_sessions.capacity %>
                 <%= f.button :submit, class: "btn btn-primary create-booking" %>
               </div>
             <% end %>
