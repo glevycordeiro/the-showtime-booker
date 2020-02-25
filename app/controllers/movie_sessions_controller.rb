@@ -31,6 +31,8 @@ class MovieSessionsController < ApplicationController
     @movie_session.update(params[:movie_session])
   end
 
+
+
   private
 
   def movie_session_params

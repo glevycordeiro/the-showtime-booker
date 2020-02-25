@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     end
   end
   get "dashboard", to: 'pages#dashboard', as: 'dashboard'
+  get "cancelled", to: 'bookings#cancelled', as: "cancelled"
 end
