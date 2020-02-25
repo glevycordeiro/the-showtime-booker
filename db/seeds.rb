@@ -19,11 +19,16 @@ require 'open-uri'
 file = URI.open('https://res.cloudinary.com/woddi/image/upload/v1581782638/Showtime/woman-beard-transgender-lgbt-mtf-avatar-512_sdrnd1.png')
 # filename = File.basename(URI.parse(url).path)
 
+puts "Destroying models"
+
 User.destroy_all
 Cinema.destroy_all
 Movie.destroy_all
 MovieSession.destroy_all
+Review.destroy_all
 Booking.destroy_all
+
+puts "DB cleaned"
 
 booking_status = ["active", "cancelled", "redeemed"]
 
