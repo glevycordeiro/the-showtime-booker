@@ -77,4 +77,6 @@ class MoviesController < ApplicationController
     # method should return the day after in string format
     return day_after
   end
+
+
 end

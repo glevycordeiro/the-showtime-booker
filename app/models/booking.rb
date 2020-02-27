@@ -9,7 +9,7 @@ class Booking < ApplicationRecord
 
 
 
-  has_one :review, depe>>>>>>> master
+  has_one :review
 
   STATUSES = ["active", "redeemed", "cancelled", "pending"]
   validates :status, inclusion: { in: STATUSES }
