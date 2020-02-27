@@ -7,10 +7,6 @@ class Booking < ApplicationRecord
   has_one :review
   validate :is_sold_out?
 
-
-
-  has_one :review
-
   STATUSES = ["active", "redeemed", "cancelled", "pending"]
   validates :status, inclusion: { in: STATUSES }
 

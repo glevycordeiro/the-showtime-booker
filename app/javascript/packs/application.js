@@ -5,10 +5,9 @@ import "plugins/init_star_rating";
 import { initStarRating } from '../plugins/init_star_rating';
 initStarRating();
 import { selectSession } from "./../partials/movie_session";
-import { openSearch } from "./../partials/search_bar";
+// import { openSearch } from "./../partials/search_bar";
 
 selectSession();
-openSearch();
 
 $(function() {
   function readURL(input) {

@@ -24,6 +24,8 @@ class MoviesController < ApplicationController
       ev.start_date.strftime("%H:%M")
 
     end
+
+    @average = avg_rating(@movie)
   end
 
   def new
@@ -78,5 +80,16 @@ class MoviesController < ApplicationController
     return day_after
   end
 
+  def avg_rating(movie)
+    sum_rating = 0
+    sum_reviews = 0
 
+    movie.bookings.each do |booking|
+      if booking.review
+        sum_reviews += 1
+        sum_rating += booking.review.rating
+      end
+    end
+    return sum_reviews == 0 ? 0 : sum_rating / sum_reviews
+  end
 end
