@@ -1,6 +1,6 @@
 
   <div class= "book-hist">
-    
+
       <div class= "dash-img">
         <%= image_tag  booking.movie.poster,height: 250 %>
       </div>
@@ -11,7 +11,7 @@
             <p class= "book-text">Date: <%= booking.movie_session.start_date.strftime("%F") %></p>
             <p class= "book-text">Time: <%= booking.movie_session.start_date.strftime("%H:%M") %></p>
             <p class= "book-text">Seats: <%= booking.seats %></p>
-            <p class= "book-text">Price: <%= booking.price %></p>
+            <p class= "book-text">Price: <%= booking.seats * booking.movie_session.price%> €</p>
             <p class= "book-text">Status: <%= booking.status.capitalize %></p>
          </div>
         <div class = "btn-box">
@@ -26,10 +26,10 @@
             <% if booking.status == "active" %>
               <%= link_to "",cancelled_path(booking: booking ), class: "far fa-window-close book-btn" %>
           <% end %>
-        
+
 
         </div>
-        
+
       </div>
-    
+
   </div>
