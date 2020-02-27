@@ -1,12 +1,11 @@
-
-  <div class= "book-hist">
-
-      <div class= "dash-img">
+<div class="book-hist">
+    
+      <div class="dash-img">
         <%= image_tag  booking.movie.poster,height: 250 %>
       </div>
 
-      <div class= "card-product">
-          <h2 class= "book-title"><%= booking.movie.title %></h2>
+      <div class="card-product">
+          <h2 class="book-title"><%= booking.movie.title %></h2>
           <div>
             <p class= "book-text">Date: <%= booking.movie_session.start_date.strftime("%F") %></p>
             <p class= "book-text">Time: <%= booking.movie_session.start_date.strftime("%H:%M") %></p>
@@ -14,7 +13,7 @@
             <p class= "book-text">Price: <%= booking.seats * booking.movie_session.price%> €</p>
             <p class= "book-text">Status: <%= booking.status.capitalize %></p>
          </div>
-        <div class = "btn-box">
+        <div class="btn-box">
           <% if booking.status == "redeemed" %>
             <% if booking.review.present? %>
                 <%= link_to "",booking_reviews_path(booking), class: "far fa-edit book-btn book-btn-margin"%>
@@ -23,13 +22,26 @@
             <% end %>
           <% end %>
 
-            <% if booking.status == "active" %>
-              <%= link_to "",cancelled_path(booking: booking ), class: "far fa-window-close book-btn" %>
+          <% if booking.status == "active" %>
+            <i class="far fa-window-close book-btn cancel-booking"></i>
           <% end %>
-
-
         </div>
-
       </div>
-
   </div>
+<!------ CONFIRMATION MODAL ------->
+<% if booking.status == "active" %>
+<div class="confirmation-modal hidden-modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <h3>Are you sure you want to cancel?</h3>
+    <div class="modal-buttons">
+      <%= link_to cancelled_path(booking: booking ) do%>
+        <button  type="button" class="btn btn-success modal-button"><i class="fas fa-check"></i> Yes</button>
+      <% end %>
+      <button  type="button" class="btn btn-light close-confirmation-modal modal-button"><i class="fas fa-times"></i>No </button>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
