@@ -7,11 +7,11 @@
       <div class="card-product">
           <h2 class="book-title"><%= booking.movie.title %></h2>
           <div>
-            <p class="book-text">Date: <%= booking.movie_session.start_date.strftime("%F") %></p>
-            <p class="book-text">Time: <%= booking.movie_session.start_date.strftime("%H:%M") %></p>
-            <p class="book-text">Seats: <%= booking.seats %></p>
-            <p class="book-text">Price: <%= booking.price %></p>
-            <p class="book-text">Status: <%= booking.status.capitalize %></p>
+            <p class= "book-text">Date: <%= booking.movie_session.start_date.strftime("%F") %></p>
+            <p class= "book-text">Time: <%= booking.movie_session.start_date.strftime("%H:%M") %></p>
+            <p class= "book-text">Seats: <%= booking.seats %></p>
+            <p class= "book-text">Price: <%= booking.seats * booking.movie_session.price%> €</p>
+            <p class= "book-text">Status: <%= booking.status.capitalize %></p>
          </div>
         <div class="btn-box">
           <% if booking.status == "redeemed" %>

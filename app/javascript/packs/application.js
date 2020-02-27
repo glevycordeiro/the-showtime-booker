@@ -5,11 +5,11 @@ import "plugins/init_star_rating";
 import { initStarRating } from "../plugins/init_star_rating";
 initStarRating();
 import { selectSession } from "./../partials/movie_session";
-import { openSearch } from "./../partials/search_bar";
 import { openModal } from "./../partials/confirmation_modal";
 
 selectSession();
 openModal();
+// import { openSearch } from "./../partials/search_bar";
 
 $(function() {
   function readURL(input) {

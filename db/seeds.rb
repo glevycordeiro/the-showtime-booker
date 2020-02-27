@@ -44,6 +44,8 @@ puts 'Creating 10 random users...'
   user.save!
 end
 
+user_test = User.create(first_name: "Maria", last_name: "Silva", dob: "21/02/1980", email: "lewagon@gmail.com", password: "123456")
+
 cinema_colombo = Cinema.create(user: User.all.sample, address: 'Avenida Lusíada', name: 'Colombo')
 cinema_amoreiras = Cinema.create(address: 'Av Engenheiro Duarte Pacheco', user: User.all.sample, name: 'Amoreiras')
 cinema_uci = Cinema.create(address: 'São Sebastião', user: User.all.sample, name: 'El Corte Inglês')
@@ -64,7 +66,6 @@ movie_fantasyisland = Movie.create(title: 'Fantasy Island', synopsis: "A horror 
 movie_callofwild = Movie.create(title: 'The Call of the Wild', synopsis: "A sled dog struggles for survival in the wilds of the Yukon.", genre: 'Adventure, Drama, Family', duration: 110, poster: 'https://m.media-amazon.com/images/M/MV5BNWI1YzQwMDQtNzczMC00YWQ2LThmNjMtMThkMTFhNjBmMmQ3XkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_SY1000_CR0,0,630,1000_AL_.jpg', age_limit: 12, imdb_url: 'https://www.imdb.com/title/tt7504726/?ref_=nv_sr_srsg_0', cinema: Cinema.all.sample)
 movie_likeaboss = Movie.create(title: 'Like a Boss', synopsis: "Two friends with very different ideals start a beauty company together. One is more practical while the other wants to earn her fortune and live a lavish lifestyle.", genre: 'Comedy', duration: 83, poster: 'https://m.media-amazon.com/images/M/MV5BNjAyZDRjMjQtODE3MC00ODI2LTgxODktZThjYTgzZDE5NTc4XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg', age_limit: 14, imdb_url: 'https://www.imdb.com/title/tt7545266/?ref_=nv_sr_srsg_0', cinema: Cinema.all.sample)
 
-
 puts 'Creating movie_sessions...'
 
 Movie.all.each do |movie|
@@ -75,9 +76,9 @@ Movie.all.each do |movie|
       start_time: start_day_hour.strftime("%H:%M"),
       end_date: start_day_hour + (movie.duration*60),
       movie_id: movie.id,
-      capacity: rand(60..200),
+      capacity: rand(50..100),
       status: true,
-      price: 7
+      price: rand(4..8),
     )
     movie_session.save!
   end

@@ -1,15 +1,19 @@
 .movie-container {
   display: flex;
+
+}
+
+#picture {
   height: calc(100vh - 66px);
-  img {
     // padding-top: 60px;
-    height: auto;
-  }
+    width: 510px;
+
 }
 
 .movie-info {
   padding: 20px 30px 10px 50px;
   justify-content: space-evenly;
+
 }
 
 .movie-title {

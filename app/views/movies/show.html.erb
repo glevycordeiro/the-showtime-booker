@@ -1,11 +1,14 @@
   <div class="movie-container">
-    <%= image_tag @movie.poster, alt: "movie poster", width: 400 %>
+    <%= image_tag @movie.poster, alt: "movie poster", width: 450 %>
     <div class="movie-info">
       <div class="movie-title"><%= @movie.title %></div>
       <div class="general-info">
         <p><strong> Age Limit: </strong> M/<%= @movie.age_limit %></p>
         <p><strong> Genre:</strong> <%= @movie.genre.capitalize %></p>
         <p><strong> Duration (minutes): </strong><%= @movie.duration %></p>
+        <% @average.times do %>
+          <i class="fas fa-star color-stars"></i>
+        <% end %>
       </div>
       <p><%= @movie.synopsis %></p>
 
@@ -23,7 +26,8 @@
             <%= simple_form_for @booking do |f| %>
               <%= f.association :movie_session, collection: @sorted_sessions, input_html: { class: 'sessions-button-input' }, label_method: lambda { |movie_session| "#{movie_session.start_date.strftime('%H:%M')}".html_safe }, as: :radio_buttons, item_wrapper_class: 'sessions-button'  %>
               <div id="number-tickets" class="hidden">
-                <%= f.input :seats, collection: [1, 2, 3], default: 1, label: 'Chose the number of tickets:' %>
+                <%= f.input :seats, collection: (1..100), default: 1, label: 'Chose the number of tickets:' %>
+                <%#= flash.alert "Already fully booked" if @booking.seats > @movie.movie_sessions.capacity %>
                 <%= f.button :submit, class: "btn btn-primary create-booking" %>
               </div>
             <% end %>
