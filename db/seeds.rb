@@ -74,7 +74,7 @@ Movie.all.each do |movie|
       start_time: start_day_hour.strftime("%H:%M"),
       end_date: start_day_hour + (movie.duration*60),
       movie_id: movie.id,
-      capacity: rand(1..10),
+      capacity: rand(50..100),
       status: true,
       price: rand(4..8),
     )
