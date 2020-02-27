@@ -44,6 +44,8 @@ puts 'Creating 10 random users...'
   user.save!
 end
 
+user_test = User.create(first_name: "Maria", last_name: "Silva", dob: "21/02/1980", email: "lewagon@gmail.com", password: "123456")
+
 cinema_colombo = Cinema.create(user: User.all.sample, address: 'Avenida Lusíada', name: 'Colombo')
 cinema_amoreiras = Cinema.create(address: 'Av Engenheiro Duarte Pacheco', user: User.all.sample, name: 'Amoreiras')
 cinema_uci = Cinema.create(address: 'São Sebastião', user: User.all.sample, name: 'El Corte Inglês')
