@@ -67,19 +67,37 @@ movie_likeaboss = Movie.create(title: 'Like a Boss', synopsis: "Two friends with
 puts 'Creating movie_sessions...'
 
 Movie.all.each do |movie|
-  10.times do
-    start_day_hour = Faker::Time.between(from: DateTime.now, to: DateTime.now + 7)
-    movie_session = MovieSession.new(
-      start_date: start_day_hour,
-      start_time: start_day_hour.strftime("%H:%M"),
-      end_date: start_day_hour + (movie.duration*60),
-      movie_id: movie.id,
-      capacity: rand(1..10),
-      status: true,
-      price: rand(4..8),
+  inc = 0 # start today
+  now = DateTime.now
+  start = DateTime.new(now.year, now.month, now.day, 0, 0, 0, now.zone)
+  while inc <= 15 # 14 days period
+    dates = start + inc
+    inc +=1
+    4.times do # 6 sessions / day
+      start_day_hour = Faker::Time.between(from: 9, to: 22)
+      day_sessions = DateTime.new(dates.year, dates.month, dates.day , start_day_hour, 0, 0 )
+      #hour_sessions = day_sessions
+      #p day_sessions.strftime("%H %M") #+ (movie.duration*60)
+      end_sessions = day_sessions + (movie.duration).minutes
+      #p end_sessions
+      #p day_sessions.strftime("%y %m %d")
+      #p hour_sessions
+      movie_session = MovieSession.new(
+        start_date: day_sessions,
+
+        end_date: end_sessions,
+        movie_id: movie.id,
+        capacity: rand(1..10),
+        status: true,
+        price: rand(4..8),
     )
+        #start_time: hour_sessions,
+      #p movie_session[:start_date]
+      p movie_session
+
     movie_session.save!
   end
+end
 end
 
 puts 'Creating bookings...'
